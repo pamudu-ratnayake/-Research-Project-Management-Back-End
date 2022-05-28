@@ -24,10 +24,12 @@ mongoose.connect(URL, {
   app.listen(PORT, () => {
     console.log(`<=== Server is up and running on port ${PORT} ====>`);
   });
-  
 
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("        <=== Database connected ! ====>");
   console.log(`<=== Running on URL: http://localhost:${PORT} ====>`);
 });
+
+const authRoutes = require("./src/routes/admin/UserManagementRT");
+app.use("/auth-user", authRoutes);
