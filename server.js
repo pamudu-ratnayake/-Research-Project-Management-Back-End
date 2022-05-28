@@ -36,3 +36,5 @@ app.use("/auth-user", authRoutes);
 
 const AdminRoutes = require("./src/routes/admin/AdminManagementRT");
 app.use("/admin", AdminRoutes);
+const topicRouter = require("./src/routes/topicRouter/TopicRouter.js");
+app.use("/topic", topicRouter);
