@@ -40,3 +40,5 @@ const topicRouter = require("./src/routes/topicRouter/TopicRouter.js");
 app.use("/topic", topicRouter);
 const staffMemberRouter = require("./src/routes/StaffRoutes/StaffDetailsRoutes.js");
 app.use("/staffMember", staffMemberRouter);
+const StudentRouter = require("./src/routes/StudentRoutes/StudentRoutes.js");
+app.use("/student", StudentRouter);
