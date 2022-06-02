@@ -42,3 +42,9 @@ const staffMemberRouter = require("./src/routes/StaffRoutes/StaffDetailsRoutes.j
 app.use("/staffMember", staffMemberRouter);
 const StudentRouter = require("./src/routes/StudentRoutes/StudentRoutes.js");
 app.use("/student", StudentRouter);
+
+const StudentGroupRouter = require("./src/routes/StudentRoutes/StudentGroupRoutes.js");
+app.use("/studentgroup", StudentGroupRouter);
+
+const TopicRouter = require("./src/routes/StudentRoutes/TopicRoutes.js");
+app.use("/topic", TopicRouter);

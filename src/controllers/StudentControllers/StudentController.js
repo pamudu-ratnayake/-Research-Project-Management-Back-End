@@ -5,14 +5,20 @@ exports.postStudentDetails = (req, res, next) => {
     const Registration_no = req.body.Registration_no;
     const Faculty = req.body.Faculty;
     const Email = req.body.Email;
-    const Password = req.body.Password;
+    const Gender = req.body.Gender;
+    const Date_of_birth = req.body.Date_of_birth;
+    const address = req.body.address;
+    const contact_No = req.body.contact_No;
 
     const newStudentDetails = new Student({
         Name,
         Registration_no,
         Faculty,
         Email,
-        Password
+        Gender,
+        Date_of_birth,
+        address,
+        contact_No
     });
 
     newStudentDetails.save()
@@ -36,14 +42,17 @@ exports.getStudentDetails = (req, res, next) => {
 
 exports.updateStudentDetails = async (req, res) => {
     let student_id = req.params.student_id;
-    const {Name, Registration_no, Faculty, Email, Password} = req.body;
+    const {Name, Registration_no, Faculty, Email, Gender, Date_of_birth, address, contact_No} = req.body;
 
     const studentUpdate = {
         Name,
         Registration_no,
         Faculty,
         Email,
-        Password
+        Gender,
+        Date_of_birth,
+        address,
+        contact_No
     };
 
     const update = await Student.findByIdAndUpdate(student_id, studentUpdate)

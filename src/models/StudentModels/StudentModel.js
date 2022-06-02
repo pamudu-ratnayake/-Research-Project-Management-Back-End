@@ -19,10 +19,22 @@ const studentDetails = new Schema({
     type: String,
     required: true,
   },
-  Password: {
+  Gender: {
     type: String,
     required: true,
-  }
+  },
+  Date_of_birth: {
+    type: String,
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  contact_No: {
+    type: String,
+    required: true,
+  },
 });
 
 const Student = mongoose.model("Student", studentDetails);
