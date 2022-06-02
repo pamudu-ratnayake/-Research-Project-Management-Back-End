@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 const userManagement = new Schema({
 
-    // user_type:{
-    //     type:String,
-    //     required: true,
-    // },
+    user_type:{
+        type:String,
+        required: true,
+    },
     firstName:{
         type:String,
         required: true,
@@ -21,6 +21,10 @@ const userManagement = new Schema({
         required: true,
     },
     password:{
+        type:String,
+        required: true,
+    },
+    faculty:{
         type:String,
         required: true,
     },

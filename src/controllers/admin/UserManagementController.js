@@ -30,7 +30,7 @@ const login = async (req, res) => {
 };
 
 const signup = async (req, res) => {
-  const { email, password, firstName, lastName, reg_no } = req.body;
+  const { email, password, firstName, lastName, faculty, reg_no, user_type } = req.body;
 
   try {
     const oldUser = await UserAuthModel.findOne({ email });
@@ -44,7 +44,9 @@ const signup = async (req, res) => {
       password: hashedPassword,
       firstName,
       lastName,
-      reg_no
+      faculty,
+      reg_no,
+      user_type
     });
 
     const token = jwt.sign({ email: result.email, id: result._id }, secret, {
