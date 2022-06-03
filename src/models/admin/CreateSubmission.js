@@ -8,7 +8,7 @@ const PublishedSubmissions = new Schema({
     //     type:String,
     //     required: true,
     // },
-    tile:{
+    title:{
         type:String,
         required: true,
     },
