@@ -7,6 +7,6 @@ router.post("/addStudentiDetails", StudentDetails.postStudentDetails);
 router.get("/getStudentDetails", auth, StudentDetails.getStudentDetails);
 router.put("/updateStudentDetails/:student_id", auth, StudentDetails.updateStudentDetails);
 router.delete("/deletStudentDetails/:student_id", auth, StudentDetails.deleteStudent);
-router.get("/getOneStudentDetails/:student_id", auth, StudentDetails.getOneStudentDetail);
+router.get("/getOneStudentDetails/:student_id", StudentDetails.getOneStudentDetail);
 
 module.exports = router;
