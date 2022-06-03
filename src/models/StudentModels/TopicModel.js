@@ -13,7 +13,7 @@ const TopicDetails = new Schema({
   },
   document: {
     type: String,
-    required: true,
+    // required: true,
   },
   supervisors: {
     type: Array,
