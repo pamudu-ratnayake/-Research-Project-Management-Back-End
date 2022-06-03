@@ -15,14 +15,18 @@ const TopicDetails = new Schema({
     type: String,
     // required: true,
   },
-  supervisors: {
-    type: Array,
-    required: true,
-  },
-  co_supervisors: {
-    type: Array,
-    required: true,
+  supervisors: [{
+    type: mongoose.Schema.Types.ObjectId,
+    // required: true,
+    ref: "staffmembers"
   }
+  ],
+  co_supervisors:[{
+    type: mongoose.Schema.Types.ObjectId,
+    // required: true,
+    ref: "staffmembers"
+  }
+  ],
 });
 
 const Topic = mongoose.model("Topic", TopicDetails);

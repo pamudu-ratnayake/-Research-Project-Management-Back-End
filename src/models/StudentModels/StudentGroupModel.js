@@ -11,6 +11,11 @@ const StudentGroupDetails = new Schema({
   //   type: Array,
   //   required: true,
   // }
+  supervisor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"staffmembers"
+    // required: true,
+  },
   members:[
     {
       std_name:

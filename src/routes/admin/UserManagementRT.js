@@ -5,5 +5,6 @@ const {login, signup, getUser} = require("../../controllers/admin/UserManagement
 
 router.post("/login", login);
 router.post("/signup", signup);
+router.get("/get-oneuser", auth, getUser);
 
 module.exports = router;

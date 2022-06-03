@@ -2,12 +2,14 @@ let StudentGroup = require("../../models/StudentModels/StudentGroupModel");
 
 exports.postStudentGroupDetails = (req, res, next) => {
     const members = req.body.members;
+    const supervisor = req.body.supervisor;
 
     const newStudentGroupDetails = new StudentGroup({
-        members
+        members,
+        supervisor
     });
 
-    newStudentGroupDetails.members.push(std_name, reg_No, academic_email, personal_email, contact_No)
+    // newStudentGroupDetails.members.push(std_name, reg_No, academic_email, personal_email, contact_No)
     newStudentGroupDetails.save()
     .then(() => {
         res.json("StudentGroup Details Added Successfully!");
