@@ -25,7 +25,9 @@ mongoose.connect(URL, {
     // useFindAndModify: false,
   });
 
-  app.listen(PORT, () => {
+  const server = http.createServer(app);
+  
+  server.listen(PORT, () => {
     console.log(`<=== Server is up and running on port ${PORT} ====>`);
   });
 
@@ -59,7 +61,7 @@ app.use("/topic", TopicRouter);
 
 //----------- Chat Box -----------------
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
