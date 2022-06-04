@@ -27,6 +27,13 @@ const TopicDetails = new Schema({
     ref: "staffmembers"
   }
   ],
+  research_grp_id: {
+    type: String,
+    required: true,
+  },
+  accepted_supervisors: {
+    type: Array,
+  }
 });
 
 const Topic = mongoose.model("Topic", TopicDetails);

@@ -23,6 +23,10 @@ const StaffDetailsSchema = new Schema({
     type: String,
     required: false,
   },
+  staff_faculty: {
+    type: String,
+    required: false,
+  },
   staff_address: {
     type: String,
     required: true,

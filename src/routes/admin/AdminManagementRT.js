@@ -2,6 +2,7 @@ const router = require("express").Router();
 let PanelMembers = require("../../controllers/admin/PanelMembersController");
 let PublishedSubmissions = require("../../controllers/admin/CreateSubmissionController");
 let Template = require("../../controllers/admin/TemplateController")
+let Marking = require("../../controllers/admin/MarkingSchemesController")
 
 const auth = require("../../middlewares/UserAuth");
 
@@ -33,7 +34,11 @@ router.put("/update-submit/:link_id", auth, PublishedSubmissions.updateSubmit);
 router.delete("/delete-submit/:link_id", auth, PublishedSubmissions.deleteSubmit);
 router.get("/getone-submit/:link_id", auth, PublishedSubmissions.getOneSubmit);
 
-router.post("/create-template", upload.single("file"), Template.createTemplates);
-router.get("/get-template", Template.getAllTemplates);
+router.post("/create-template", auth, upload.single("file"), Template.createTemplates);
+router.get("/get-template", auth, Template.getAllTemplates);
+
+router.post("/create-marking", auth, upload.single("file"), Marking.createMarking);
+router.get("/get-marking", auth, Marking.getAllMarkings);
+
 
 module.exports = router;

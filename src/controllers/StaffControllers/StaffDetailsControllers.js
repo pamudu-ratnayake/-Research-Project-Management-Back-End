@@ -8,6 +8,7 @@ exports.postMemberDetails = (req, res, next) => {
   const staff_LName = req.body.staff_LName;
   const staff_nic = req.body.staff_nic;
   const staff_gender = req.body.staff_gender;
+  const staff_faculty = req.body.staff_faculty;
   const staff_address = req.body.staff_address;
   const staff_contact_no = req.body.staff_contact_no;
   const staff_email = req.body.staff_email;
@@ -20,6 +21,7 @@ exports.postMemberDetails = (req, res, next) => {
     staff_LName,
     staff_nic,
     staff_gender,
+    staff_faculty,
     staff_address,
     staff_contact_no,
     staff_email,
@@ -51,7 +53,7 @@ exports.getStaffMembers = (req, res, next) => {
 //----------update-------------
 exports.updateStaffMembers = async (req, res) => {
   let staff_id = req.params.staff_id;
-  const { staff_userName, staff_FName, staff_LName, staff_nic, staff_gender, staff_address, staff_contact_no, staff_email, staff_type } = req.body;
+  const { staff_userName, staff_FName, staff_LName, staff_nic, staff_gender, staff_faculty, staff_address, staff_contact_no, staff_email, staff_type } = req.body;
 
   const staffMemberUpdate = {
     staff_userName,
@@ -59,6 +61,7 @@ exports.updateStaffMembers = async (req, res) => {
     staff_LName,
     staff_nic,
     staff_gender,
+    staff_faculty,
     staff_address,
     staff_contact_no,
     staff_email,
