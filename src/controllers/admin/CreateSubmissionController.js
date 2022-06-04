@@ -3,13 +3,13 @@ let PublishedSubmissions = require("../../models/admin/CreateSubmission");
 //-----POST-----------
 exports.createSubmit = (req, res, next) => {
   const title = req.body.title;
-  const date = req.body.date;
+  const due_date = req.body.due_date;
   const description = req.body.description;
   
 
   const newSubmission = new PublishedSubmissions({
     title,
-    date,
+    due_date,
     description
   });
 
@@ -35,11 +35,11 @@ exports.getAllSubmit = (req, res, next) => {
 
 exports.updateSubmit = async (req, res) => {
   let link_id = req.params.link_id;
-  const { title, date, description } = req.body;
+  const { title, due_date, description } = req.body;
 
   const submitUpdate = {
     title,
-    date,
+    due_date,
     description
   };
 

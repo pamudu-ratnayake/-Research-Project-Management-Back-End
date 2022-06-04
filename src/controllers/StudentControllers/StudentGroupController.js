@@ -4,6 +4,7 @@ exports.postStudentGroupDetails = (req, res, next) => {
     const members = req.body.members;
     const supervisor = req.body.supervisor;
 
+
     const newStudentGroupDetails = new StudentGroup({
         members,
         supervisor
@@ -18,6 +19,18 @@ exports.postStudentGroupDetails = (req, res, next) => {
         console.log(err);
     })
 };
+
+exports.getOneStudentGroupDetail = async (req, res) => {
+    let std_id = req.params.std_id;
+  
+    await StudentGroup.find({members : {$elemMatch: {std_id: std_id}}})
+      .then((studentGroup) => {
+        res.json(studentGroup);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
 // exports.getStudentGroupDetails = (req, res, next) => {
 //   StudentGroup.find()
@@ -62,14 +75,3 @@ exports.postStudentGroupDetails = (req, res, next) => {
 //       });
 //   };
 
-//   exports.getOneStudentGroupDetail = async (req, res) => {
-//     let StudentGroup_id = req.params.StudentGroup_id;
-  
-//     await StudentGroup.findOne({ _id: StudentGroup_id })
-//       .then((StudentGroup) => {
-//         res.json(StudentGroup);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };

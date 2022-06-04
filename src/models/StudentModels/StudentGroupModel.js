@@ -23,6 +23,11 @@ const StudentGroupDetails = new Schema({
             type:String,
             required:true
         },
+      std_id:
+        {
+            type:String,
+            required:true
+        },
         reg_No:
         {
             type:String,

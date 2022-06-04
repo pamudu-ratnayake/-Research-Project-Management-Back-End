@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const PublishedSubmissions = new Schema({
+const MarkingScheme = new Schema({
 
     // user_type:{
     //     type:String,
@@ -12,17 +12,17 @@ const PublishedSubmissions = new Schema({
         type:String,
         required: true,
     },
-    due_date:{
+    description:{
         type:String,
         required: true,
     },
-    description:{
+    marking_scheme:{
         type:String,
         required: true,
     }
 
 });
 
-const Submits = mongoose.model("PublishedSubmissions", PublishedSubmissions);
+const MarkingSchemes = mongoose.model("MarkingSchemes", MarkingScheme);
 
-module.exports = Submits;
+module.exports = MarkingSchemes;
